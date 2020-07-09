@@ -1,0 +1,40 @@
+﻿@page
+@using PwaTest.Localization
+@using Microsoft.Extensions.Localization
+@using PwaTest.Web.Pages.Books
+@model PwaTest.Web.Pages.Books.IndexModel
+
+
+@inject IStringLocalizer<PwaTestResource> L
+@section scripts
+{
+<abp-script src="/Pages/Books/Index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <h2>@L["Books"]</h2>
+    </abp-card-header>
+    <abp-card-body>
+        <div class="row">
+            <div class="col-6">
+                <select class="form-control" id="FilterType">
+                    <option ></option>
+                    <option value="0">Undefined</option>
+                    <option value="1">Adventure</option>
+                    <option value="2">Biography</option>
+                    <option value="3">Dystopia</option>
+                    <option value="4">Fantastic</option>
+                    <option value="5">Horror</option>
+                    <option value="6">Science</option>
+                    <option value="7">ScienceFiction</option>
+                    <option value="8">Poetry</option>
+
+
+                </select>
+            </div>
+        </div>
+        
+        <abp-table striped-rows="true" id="BooksTable"></abp-table>
+    </abp-card-body>
+</abp-card>
+

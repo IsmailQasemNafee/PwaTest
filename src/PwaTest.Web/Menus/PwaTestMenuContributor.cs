@@ -29,6 +29,20 @@ namespace PwaTest.Web.Menus
             var l = context.ServiceProvider.GetRequiredService<IStringLocalizer<PwaTestResource>>();
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem("PwaTest.Home", l["Menu:Home"], "/"));
+
+            context.Menu.AddItem(
+                new ApplicationMenuItem(
+                    "BooksStore",
+                    l["Menu:BookStore"],
+                    icon: "fa fa-book"
+                ).AddItem(
+                    new ApplicationMenuItem(
+                        "BooksStore.Books",
+                        l["Menu:Books"],
+                        url: "/Books"
+                    )
+                )
+            );
         }
     }
 }

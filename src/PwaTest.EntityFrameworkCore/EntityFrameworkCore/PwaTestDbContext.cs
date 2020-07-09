@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PwaTest.Books;
 using PwaTest.Users;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -21,7 +22,7 @@ namespace PwaTest.EntityFrameworkCore
     public class PwaTestDbContext : AbpDbContext<PwaTestDbContext>
     {
         public DbSet<AppUser> Users { get; set; }
-
+        public DbSet<Book> Books { get; set; }
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside PwaTestDbContextModelCreatingExtensions.ConfigurePwaTest
          */
